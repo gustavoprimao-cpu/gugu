@@ -1,1 +1,303 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS & PALETA G1
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
+body {
+    background-color: #f4f4f4; /* Fundo cinza claro clássico do G1 */
+    color: #333333;
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================================================
+   2. NAV / TOPO DO PORTAL (Estilo Vermelho G1)
+   ========================================================================== */
+.creative-nav {
+    background-color: #c4170c; /* Vermelho padrão G1 */
+    color: #ffffff;
+    display: block;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 0 20px;
+}
+
+/* Alinhamento do bloco do topo */
+.creative-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    max-width: 100%;
+}
+
+.creative-nav .logo {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-transform: lowercase;
+}
+
+.creative-nav .nav-links {
+    display: flex;
+    list-style: none;
+    height: 100%;
+}
+
+.creative-nav .nav-links li {
+    display: flex;
+    align-items: center;
+}
+
+.creative-nav .nav-links a {
+    color: #ffffff;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.creative-nav .nav-links a:hover,
+.creative-nav .nav-links a.active {
+    background-color: #a3130a; /* Tom mais escuro para o hover */
+}
+
+/* Esconde os 'dots' que eram do layout anterior para focar no padrão G1 */
+.dot-indicators, .background-glow {
+    display: none;
+}
+
+/* ==========================================================================
+   3. ÁREA DE CONTEÚDO PRINCIPAL (Centralizado e Responsivo)
+   ========================================================================== */
+.main-container {
+    max-width: 1000px; /* Largura padrão de leitura do portal */
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Reset de seções full-page para fluxo normal de portal de notícias */
+.screen-section {
+    background: #ffffff;
+    margin-bottom: 20px;
+    padding: 24px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-top: 3px solid #c4170c; /* Detalhe vermelho no topo de cada bloco */
+}
+
+/* ==========================================================================
+   4. SEÇÃO 1: MANCHETE PRINCIPAL (Estilo Destaque do G1)
+   ========================================================================== */
+#inicio {
+    padding: 0;
+    position: relative;
+    background: #000000;
+    min-height: 400px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+/* Simula uma imagem de fundo jornalística usando gradiente */
+#inicio::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    z-index: 2;
+    color: #ffffff;
+}
+
+.hero-content .tagline {
+    display: inline-block;
+    background-color: #c4170c;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+}
+
+.hero-content .gradient-text {
+    color: #ff4d4d; /* Destaque sutil no título */
+}
+
+.hero-content p {
+    font-size: 16px;
+    color: #dddddd;
+    margin-bottom: 15px;
+}
+
+.cta-button {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ff4d4d;
+}
+.cta-button:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   5. SEÇÃO 2: MANIFESTO / NOTÍCIA EM DUAS COLUNAS
+   ========================================================================== */
+.split-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2 colunas para conteúdo, 1 para lateral */
+    gap: 24px;
+}
+
+.grid-text h2 {
+    font-size: 24px;
+    color: #c4170c;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.grid-text p {
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* Coluna da direita (Simula o "Mais Lidas" ou anúncio do G1) */
+.grid-visual {
+    background-color: #fcfcfc;
+    border-left: 1px solid #e0e0e0;
+    padding-left: 20px;
+}
+
+.abstract-card {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    color: #666666;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 1px dashed #ccc;
+}
+
+/* ==========================================================================
+   6. SEÇÃO 3: GRADE DE NOTÍCIAS SECUNDÁRIAS (Feed Horizontal adaptado para Grid)
+   ========================================================================== */
+#galeria h2 {
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #333333;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Transforma o wrapper horizontal anterior em um grid de 3 colunas idêntico ao G1 */
+.horizontal-scroll-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+/* Estilo dos links de notícias do feed */
+.project-card h3 {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.project-card h3:hover {
+    color: #c4170c; /* Título fica vermelho no hover, igual ao portal */
+    cursor: pointer;
+}
+
+.project-card p {
+    font-size: 13px;
+    color: #777777;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   7. SEÇÃO 4: RODAPÉ (Padrão Globo / G1)
+   ========================================================================== */
+#contato {
+    background-color: #222222;
+    color: #ffffff;
+    border-top: 4px solid #c4170c;
+    padding: 40px 24px;
+}
+
+.creative-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer-prompt h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer-prompt .email-link {
+    color: #ff4d4d;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #444444;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #aaaaaa;
+}
+
+.socials a {
+    margin-left: 15px;
+    color: #aaaaaa;
+    transition: color 0.2s;
+}
